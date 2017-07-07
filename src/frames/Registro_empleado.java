@@ -52,7 +52,11 @@ public class Registro_empleado extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        t_mostrar = new javax.swing.JTable();
+        t_mostrar = t_mostrar = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         btn_registrar = new javax.swing.JButton();
         btn_borrar = new javax.swing.JButton();
         btn_volver = new javax.swing.JButton();
@@ -177,7 +181,7 @@ public class Registro_empleado extends javax.swing.JFrame {
                                     .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                                     .addComponent(txt_usu)
                                     .addComponent(combo_cargos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 49, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_registrar)
                         .addGap(18, 18, 18)
@@ -216,7 +220,7 @@ public class Registro_empleado extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(combo_cargos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_registrar)

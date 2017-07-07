@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package frames;
+import frames.Venta;
 import funciones.conectar;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -58,8 +59,13 @@ public class login extends javax.swing.JFrame {
          {
              this.setVisible(false);
              JOptionPane.showMessageDialog(null, "¡Bienvenido! ");
-             menu_empleado obj= new menu_empleado();
+             Venta obj=new Venta();
+             
+             //Cambie la vista empleado ya que su finalidad principal es vender asi que lo tire directo a 
+             //el frame de ventas
+             //menu_empleado obj= new menu_empleado();
              obj.setVisible(true);
+             Venta.NombreEmpleado.setText(usu);
              dispose();
          }
           if(!tipoUsuario.equals("empleado") && !tipoUsuario.equals("jefe")&& !tipoUsuario.equals("administrador")){
@@ -177,6 +183,7 @@ public class login extends javax.swing.JFrame {
         }
   
         else{
+        //Cargarusuario(user,pass);
         acceder(user,pa);}
     }//GEN-LAST:event_ingresarActionPerformed
 
